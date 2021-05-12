@@ -10,6 +10,7 @@ public class IODemo7 {
         private int id ;
         private String name;
         private String sex;
+        public static int count = 1 ;
 
         public String getSex() {
             return sex;
