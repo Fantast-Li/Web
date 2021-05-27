@@ -22,7 +22,7 @@ public class TCPEchServer {
     }
 
     private void processConnect(Socket clientSocket) {
-        //处理一次连接过程中，就需要处理多次请求
+        //处理一次连接过程中，就需要处理多 次请求
         System.out.printf("[%s:%d] 客户端上线~\n",
                 clientSocket.getInetAddress().toString(),clientSocket.getPort());
         //为了后面读写做准备，主要准备好对应的流对象
@@ -63,6 +63,8 @@ public class TCPEchServer {
     }
 
     public static void main(String[] args) throws IOException {
+        //端口号的范围 0-65535
+        // 端口号不能太小  （也不能使用0-》1023）给操作系统内部的应用程序 .
         TCPEchServer server = new TCPEchServer(9090);
         server.start();
     }
